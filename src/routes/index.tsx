@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, ActivityIndicator } from 'react-native';
+import { View, ActivityIndicator, StatusBar } from 'react-native';
 
 import AppRoutes from './app.routes';
 import AuthRoutes from './auth.routes';
@@ -17,7 +17,18 @@ const Routes: React.FC = () => {
     );
   }
 
-  return user ? <AppRoutes /> : <AuthRoutes />;
+  return user ? (
+    <>
+      <StatusBar
+        backgroundColor={user ? '#28262e' : '#312e38'}
+        barStyle="light-content"
+        translucent
+      />
+      <AppRoutes />
+    </>
+  ) : (
+      <AuthRoutes />
+    );
 };
 
 export default Routes;

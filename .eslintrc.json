@@ -1,6 +1,7 @@
 {
   "env": {
-    "es6": true
+    "es6": true,
+    "browser": true
   },
   "extends": [
     "plugin:react/recommended",
@@ -36,6 +37,7 @@
     "no-unused-expressions": "off",
     "react/prop-types": "off",
     "camelcase": "off",
+    "import/no-duplicates": "off",
     "import/extensions": [
       "error",
       "ignorePackages",
