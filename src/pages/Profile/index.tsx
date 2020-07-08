@@ -79,7 +79,7 @@ const Profile: React.FC = () => {
           const updateProfileResponse = await api.patch('/users/avatar', data);
           updateUser(updateProfileResponse.data);
         } catch (err) {
-          console.log(err.message);
+          Alert.alert('Erro ao tentar alterar a sua imagem de perfil');
         }
       },
     );
@@ -212,7 +212,7 @@ const Profile: React.FC = () => {
                 textContentType="newPassword"
                 returnKeyType="next"
                 onSubmitEditing={() => {
-                  confirmPasswordInputRef.current?.focus();
+                  passwordInputRef.current?.focus();
                 }}
               />
 
